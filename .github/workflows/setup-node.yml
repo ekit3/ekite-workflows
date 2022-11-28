@@ -19,4 +19,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: config
-        uses: ekit3/ekite-exp-composite-ga
+        uses: ekit3/ekite-exp-composite-ga@v1.0.0
