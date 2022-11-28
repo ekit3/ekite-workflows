@@ -1,0 +1,16 @@
+name: Quality Analyse
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+
+jobs:
+  quality-job:
+    name: Code Quality Analyse
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run analyze
+      run: echo "::notice title=Code Quality Analyse::run down for version ${{ inputs.version }}"

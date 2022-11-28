@@ -1,0 +1,22 @@
+name: Deploy Docker
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+jobs:
+  deploy-job:
+    name: Finaly deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ steps.get-url.outputs.url }}
+    steps:
+    - name: Deploy app
+      run: waiting deploying app
+    - name: Get deployed app url
+      id: get-url
+      run: echo "url=https://ekite.tech/" >> $GITHUB_OUTPUT

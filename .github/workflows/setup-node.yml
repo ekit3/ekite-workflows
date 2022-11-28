@@ -1,0 +1,22 @@
+name: Setup node
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: false
+        type: string
+    outputs:
+      tagged-version:
+        description: "tagged-version
+        value: ${{ jobs.config.outputs.tagged-version }}
+jobs:
+  config:
+    name: Prepare Workflow
+    runs-on: ubuntu-latest
+    outputs:
+      tagged-version: ${{ steps.config.outputs.tagged-version }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: config
+        uses: ekit3/ekite-exp-composite-ga

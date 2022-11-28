@@ -1,0 +1,22 @@
+name: Node build
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: false
+        type: string
+        default: "16"
+
+jobs:
+  npm-build:
+  name: Build
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+    - run: npm ci
+    - run: npm test
+    - run: npm run build
