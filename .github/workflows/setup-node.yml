@@ -8,7 +8,7 @@ on:
         type: string
     outputs:
       tagged-version:
-        description: "tagged-version
+        description: "tagged-version"
         value: ${{ jobs.config.outputs.tagged-version }}
 jobs:
   config:
