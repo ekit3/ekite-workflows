@@ -16,7 +16,7 @@ jobs:
       url: ${{ steps.get-url.outputs.url }}
     steps:
     - name: Deploy app
-      run: waiting deploying app
+      run: echo "waiting deploying app"
     - name: Get deployed app url
       id: get-url
       run: echo "url=https://ekite.tech/" >> $GITHUB_OUTPUT
