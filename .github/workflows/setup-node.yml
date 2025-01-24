@@ -17,6 +17,6 @@ jobs:
     outputs:
       tagged-version: ${{ steps.config.outputs.tagged-version }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: config
-        uses: ekit3/ekite-exp-composite-ga@v1.1.1
+        uses: ekit3/ekite-exp-composite-ga@main
